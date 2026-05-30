@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-30T12:05:00+09:00",
+  "seedPhase": true,
+  "entries": [
+    {
+      "id": "claude-code-best-practices",
+      "name": "Claude Code Best Practices",
+      "description": "Anthropic-published guide patterns for Claude Code session hygiene + tool selection",
+      "version": "0.1.0",
+      "gitUrl": "https://github.com/anthropics/claude-code",
+      "sha": "0000000000000000000000000000000000000000",
+      "hash": "TBD-AT-OP6",
+      "subpath": "examples/best-practices"
+    },
+    {
+      "id": "test-driven-development",
+      "name": "TDD Skill",
+      "description": "Red-green-refactor TDD workflow checklist; one-screen reference",
+      "version": "0.1.0",
+      "gitUrl": "https://github.com/anthropics/claude-code",
+      "sha": "0000000000000000000000000000000000000000",
+      "hash": "TBD-AT-OP6",
+      "subpath": "examples/tdd"
+    },
+    {
+      "id": "code-review-checklist",
+      "name": "Code Review Skill",
+      "description": "Defensive code review checklist for PRs; security + perf + style",
+      "version": "0.1.0",
+      "gitUrl": "https://github.com/anthropics/claude-code",
+      "sha": "0000000000000000000000000000000000000000",
+      "hash": "TBD-AT-OP6",
+      "subpath": "examples/code-review"
+    }
+  ]
+}

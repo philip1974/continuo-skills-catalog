@@ -1,0 +1,19 @@
+name: Catalog hash recompute
+
+on:
+  pull_request:
+    branches: [main]
+    paths: ['catalog.json']
+
+jobs:
+  verify-hash:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '24' }
+      - run: corepack enable
+      - name: Install minimal tools
+        run: pnpm add -D tsx typescript @types/node
+      - name: Verify hash matches catalog declaration
+        run: pnpm tsx tools/catalog-hash.ts --verify
