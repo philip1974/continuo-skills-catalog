@@ -1,37 +1,26 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-30T12:05:00+09:00",
-  "seedPhase": true,
+  "generatedAt": "2026-05-31T11:55:00+09:00",
   "entries": [
     {
-      "id": "claude-code-best-practices",
-      "name": "Claude Code Best Practices",
-      "description": "Anthropic-published guide patterns for Claude Code session hygiene + tool selection",
+      "id": "web-design-guidelines",
+      "name": "Web Design Guidelines",
+      "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to review my UI, check accessibility, audit design, review UX, or check my site against best practices.",
       "version": "0.1.0",
-      "gitUrl": "https://github.com/anthropics/claude-code",
+      "gitUrl": "https://github.com/philip1974/continuo-skills-catalog",
       "sha": "0000000000000000000000000000000000000000",
       "hash": "TBD-AT-OP6",
-      "subpath": "examples/best-practices"
+      "subpath": "skills/web-design-guidelines"
     },
     {
-      "id": "test-driven-development",
-      "name": "TDD Skill",
-      "description": "Red-green-refactor TDD workflow checklist; one-screen reference",
+      "id": "frontend-design",
+      "name": "Frontend Design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications.",
       "version": "0.1.0",
-      "gitUrl": "https://github.com/anthropics/claude-code",
+      "gitUrl": "https://github.com/philip1974/continuo-skills-catalog",
       "sha": "0000000000000000000000000000000000000000",
       "hash": "TBD-AT-OP6",
-      "subpath": "examples/tdd"
-    },
-    {
-      "id": "code-review-checklist",
-      "name": "Code Review Skill",
-      "description": "Defensive code review checklist for PRs; security + perf + style",
-      "version": "0.1.0",
-      "gitUrl": "https://github.com/anthropics/claude-code",
-      "sha": "0000000000000000000000000000000000000000",
-      "hash": "TBD-AT-OP6",
-      "subpath": "examples/code-review"
+      "subpath": "skills/frontend-design"
     }
   ]
 }
