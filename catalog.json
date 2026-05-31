@@ -8,8 +8,8 @@
       "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to review my UI, check accessibility, audit design, review UX, or check my site against best practices.",
       "version": "0.1.0",
       "gitUrl": "https://github.com/philip1974/continuo-skills-catalog",
-      "sha": "0000000000000000000000000000000000000000",
-      "hash": "TBD-AT-OP6",
+      "sha": "a75c640db8af866eb4e3eefab64382b87418b425",
+      "hash": "66406cd6384d6b82e4f3c3c17e0bc548fd795981aa0f4f101f0ea8e56100a988",
       "subpath": "skills/web-design-guidelines"
     },
     {
@@ -18,8 +18,8 @@
       "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications.",
       "version": "0.1.0",
       "gitUrl": "https://github.com/philip1974/continuo-skills-catalog",
-      "sha": "0000000000000000000000000000000000000000",
-      "hash": "TBD-AT-OP6",
+      "sha": "a75c640db8af866eb4e3eefab64382b87418b425",
+      "hash": "70b2784b5b90db1b4de88786968dcd529d7879ea78df5c63fa657daa42eda1c9",
       "subpath": "skills/frontend-design"
     }
   ]
