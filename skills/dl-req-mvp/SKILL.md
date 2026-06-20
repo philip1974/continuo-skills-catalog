@@ -22,7 +22,7 @@ description: Stage 1/6 of the dev-loop workflow (MVP + visual/product anchors pr
 
 The user picks which sibling to invoke. **No** auto-routing.
 
-> Field-name authority lives in `~/.claude/dev-loop-shared/req-contract-v1.yaml`. Both sibling skills MUST conform to it — any drift = bug.
+> Field-name authority lives in `~/.claude/skills/dev-loop-shared/req-contract-v1.yaml`. Both sibling skills MUST conform to it — any drift = bug.
 
 ## Do NOT run this skill when
 
@@ -47,10 +47,10 @@ The skill mitigates all four via the **candidate queue pattern** (Phase E + F): 
 
 ## Shared assets
 
-- `~/.claude/dev-loop-shared/project-detect.sh`
-- `~/.claude/dev-loop-shared/topic-metadata-template.yaml` (must be v2 — includes contract fields; see companion edit)
-- `~/.claude/dev-loop-shared/reasons-takeaways.md`
-- `~/.claude/dev-loop-shared/req-contract-v1.yaml` (authority for field names + golden req sample)
+- `~/.claude/skills/dev-loop-shared/project-detect.sh`
+- `~/.claude/skills/dev-loop-shared/topic-metadata-template.yaml` (must be v2 — includes contract fields; see companion edit)
+- `~/.claude/skills/dev-loop-shared/reasons-takeaways.md`
+- `~/.claude/skills/dev-loop-shared/req-contract-v1.yaml` (authority for field names + golden req sample)
 
 ## Behavior
 
