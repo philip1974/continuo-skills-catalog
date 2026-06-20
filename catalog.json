@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-20T17:37:42+09:00",
+  "generatedAt": "2026-06-20T17:51:13+09:00",
   "entries": [
     {
       "id": "web-design-guidelines",
@@ -23,12 +23,21 @@
       "subpath": "skills/frontend-design"
     },
     {
+      "id": "dev-loop-shared",
+      "name": "dev-loop-shared",
+      "description": "Dependency bundle, NOT a user-invoked workflow — never invoke directly. Holds the shared support files (project-detect.sh, topic-metadata-template.yaml, reasons-takeaways.md, codex-red-team-prompt-template.md, wiki-red-team-checklist.md, req-contract-v1.yaml) that the dev-loop (dl-*) and il-loop (il-*) skills read from ~/.claude/skills/dev-loop-shared/. Install this once alongside any dl-* / il-* skill.",
+      "gitUrl": "https://github.com/philip1974/dev-loop-skills",
+      "sha": "3876a309b06fceef5482c4dc32b681956705171e",
+      "hash": "6a2fb0e5b945f7b78d17be9be19d48bb83d679b872171607a93d5664455f8704",
+      "subpath": "skills/dev-loop-shared"
+    },
+    {
       "id": "dl-req",
       "name": "dl-req",
       "description": "Stage 1/6 of the dev-loop workflow. Use only when the user explicitly asks to start the dev-loop requirements stage via phrases like \"/dl-req\", \"dev-loop:req\", \"开始 dev-loop 需求确认\", or \"进入 req 阶段\". Creates a topic directory and a structured req.md (REASONS-inspired canvas) by asking 2-3 clarifying questions per round. Do NOT invoke for ordinary \"I want to...\" requests, casual feature ideas, simple questions, or direct implementation requests.",
       "gitUrl": "https://github.com/philip1974/dev-loop-skills",
-      "sha": "17ceabdec3e99c3086a4fa7d1f9c03181dda9c18",
-      "hash": "b3b7cfb9b15df7ba249e28bf3ea856300be6d7a2f745d92b47b0191ef4168886",
+      "sha": "3876a309b06fceef5482c4dc32b681956705171e",
+      "hash": "e971eb3a24918c584c57936c15d6625fe7239f426e50a23bd93fb3d8c600d1fa",
       "subpath": "skills/dl-req"
     },
     {
@@ -36,8 +45,8 @@
       "name": "dl-plan",
       "description": "Stage 2/6 of the dev-loop workflow. Use only when the user explicitly asks to run the dev-loop plan stage via phrases like \"/dl-plan\", \"dev-loop:plan\", \"进入 plan 阶段\", or \"为 topic NN 写 plan\". Reads req.md, fills in Approach + Operations + detailed Entities, declares affects_files, and produces plan-vN.md plus the required-questions list for /dl-red-team to attack. Do NOT invoke for casual planning, brainstorming, or any request that does not reference an existing tracked topic.",
       "gitUrl": "https://github.com/philip1974/dev-loop-skills",
-      "sha": "17ceabdec3e99c3086a4fa7d1f9c03181dda9c18",
-      "hash": "6af0a7e3eb146b5731b7741a611ea9475abe7188c3cc896ae40ccb6fba4178a0",
+      "sha": "3876a309b06fceef5482c4dc32b681956705171e",
+      "hash": "2814d67e6829dd8fb1bc4a988177e8579924388cd4c46725697f1ed9bd32fd5c",
       "subpath": "skills/dl-plan"
     },
     {
@@ -45,8 +54,8 @@
       "name": "dl-red-team",
       "description": "Stage 3/6 of the dev-loop workflow. Use only when the user explicitly asks to red-team a plan via phrases like \"/dl-red-team\", \"dev-loop:red-team\", \"红队 plan\", or \"进入 red-team 阶段\". Drives an independent codex agent through the continuo MCP terminal to critique the current plan-vN.md, produces red-team-vN.md, updates topic metadata. Has external side effects (writes to a codex terminal, schedules wakeups). Do NOT invoke automatically; only on explicit user request.",
       "gitUrl": "https://github.com/philip1974/dev-loop-skills",
-      "sha": "17ceabdec3e99c3086a4fa7d1f9c03181dda9c18",
-      "hash": "bbb88ce58abe0e9c062525a2fef28ec0f43f4a0c6f5d63a44a457b20f6fa6d38",
+      "sha": "3876a309b06fceef5482c4dc32b681956705171e",
+      "hash": "17b9373dc8ad98c63572333c682f19d31acf4b7333f8998983cdfae3379ffbbb",
       "subpath": "skills/dl-red-team"
     },
     {
@@ -54,8 +63,8 @@
       "name": "dl-integrate",
       "description": "Stage 4/6 of the dev-loop workflow. Use only when the user explicitly asks to integrate red-team feedback via phrases like \"/dl-integrate\", \"dev-loop:integrate\", \"整合 red-team\", or \"merge red-team feedback\". Reads red-team-vN.md + plan-vN.md, decides accept/reject/defer per P0/P1/P2 item, writes plan-v(N+1).md with a changelog, and runs the cross-topic conflict check. Do NOT invoke for ordinary git-merge or cherry-pick tasks unrelated to dev-loop.",
       "gitUrl": "https://github.com/philip1974/dev-loop-skills",
-      "sha": "17ceabdec3e99c3086a4fa7d1f9c03181dda9c18",
-      "hash": "eff509b24785c538f77bddf6dfa7212b0eb4fb81615aa81cf33a64820508b078",
+      "sha": "3876a309b06fceef5482c4dc32b681956705171e",
+      "hash": "ea66dae3189e3c92f33d331176e2b169542427594a57ca23bda29eeee69083cc",
       "subpath": "skills/dl-integrate"
     },
     {
@@ -63,8 +72,8 @@
       "name": "dl-execute",
       "description": "Stage 5/6 of the dev-loop workflow. Use only when the user explicitly asks to execute a tracked plan via phrases like \"/dl-execute\", \"dev-loop:execute\", \"执行 plan\", or \"进入 execute 阶段\". Runs the Operations from plan.md in order, appends to execute-log.md, records actually-touched files. Has the highest side-effect risk in the dev-loop (writes project files, may run commands, may affect git working tree). NEVER invoke automatically — must be explicit user request.",
       "gitUrl": "https://github.com/philip1974/dev-loop-skills",
-      "sha": "17ceabdec3e99c3086a4fa7d1f9c03181dda9c18",
-      "hash": "529cd757a2c8aa17cfa99905357645f70f61fff0c7aab0d194fc0dd3bcbd81ec",
+      "sha": "3876a309b06fceef5482c4dc32b681956705171e",
+      "hash": "76461f9a78b79598009d3ef766fa0ac320659ab91237a23d0ad85ec14620f3a9",
       "subpath": "skills/dl-execute"
     },
     {
@@ -72,8 +81,8 @@
       "name": "dl-verify",
       "description": "Stage 6/6 (final) of the dev-loop workflow. Use only when the user explicitly asks to verify and finalize a tracked topic via phrases like \"/dl-verify\", \"dev-loop:verify\", \"进入 verify 阶段\", or \"verify topic NN\". Runs acceptance / Norms / Safeguards checks against actual execution, writes verify.md (append-only), optionally promotes decision artifacts to git-tracked locations, and (with user confirmation) creates the final git commit. Highest commit-side-effect risk — NEVER invoke automatically.",
       "gitUrl": "https://github.com/philip1974/dev-loop-skills",
-      "sha": "17ceabdec3e99c3086a4fa7d1f9c03181dda9c18",
-      "hash": "056b09b4cfbcf3d0ff75515012c1832bee2fb2fe00defeb9f1a297be26d79723",
+      "sha": "3876a309b06fceef5482c4dc32b681956705171e",
+      "hash": "c5e4beb8369703bf9275e8a931911ecec364430b18ac37c89e00fc6024e7f689",
       "subpath": "skills/dl-verify"
     },
     {
@@ -81,7 +90,7 @@
       "name": "il-triage",
       "description": "Stage 1/4 of the il-loop workflow (issue-loop, simplified dev-loop for GitHub issues). Use only when the user explicitly asks to triage a GitHub issue via phrases like \"/il-triage\", \"il-loop:triage\", \"处理 issue NN\", or \"为 issue NN 做 triage\". Reads a GitHub issue, classifies it (trivial / normal / heavy) via a T1-T5 decision tree, captures git base state, asks user for the test command, and writes `.claude/issues/<NN>-<slug>.md`. Do NOT invoke for ordinary \"I want to fix...\" requests, code edits without a referenced issue number, or full dev-loop work.",
       "gitUrl": "https://github.com/philip1974/dev-loop-skills",
-      "sha": "17ceabdec3e99c3086a4fa7d1f9c03181dda9c18",
+      "sha": "3876a309b06fceef5482c4dc32b681956705171e",
       "hash": "66e99dd440271d2844eaadabc14d7a3979746011bc745a1b7cdd091185733408",
       "subpath": "skills/il-triage"
     },
@@ -90,7 +99,7 @@
       "name": "il-brief",
       "description": "Stage 2/4 of the il-loop workflow. Use only when the user explicitly asks to write a brief for a triaged normal-path issue via phrases like \"/il-brief\", \"il-loop:brief\", \"为 issue NN 写 brief\". Writes a design brief, spawns a per-issue codex session via continuo, runs a single-round red-team, and integrates feedback in place with an auditable changelog. Skips itself for trivial-path issues (those go directly from triage to fix). Do NOT invoke without a prior /il-triage having written the issue file with path=normal.",
       "gitUrl": "https://github.com/philip1974/dev-loop-skills",
-      "sha": "17ceabdec3e99c3086a4fa7d1f9c03181dda9c18",
+      "sha": "3876a309b06fceef5482c4dc32b681956705171e",
       "hash": "2c2a27de3ff12650fc9fd112ea10b91631046170157f621aae2f11868432c3dd",
       "subpath": "skills/il-brief"
     },
@@ -99,7 +108,7 @@
       "name": "il-fix",
       "description": "Stage 3/4 of the il-loop workflow. Use only when the user explicitly asks to execute fixes for a triaged or brief-completed GitHub issue via phrases like \"/il-fix\", \"il-loop:fix\", \"让 codex 修 issue NN\", or \"执行 issue NN\". Dispatches the operations list to a per-issue codex session (created if missing for trivial path), monitors execution with intended/attempted/applied/failed tagging, and on partial failure invokes the D3 five-choice prompt (continue / stash / revert / abandon / escalate). Has the highest side-effect risk in il-loop — touches the git worktree. NEVER invoke automatically.",
       "gitUrl": "https://github.com/philip1974/dev-loop-skills",
-      "sha": "17ceabdec3e99c3086a4fa7d1f9c03181dda9c18",
+      "sha": "3876a309b06fceef5482c4dc32b681956705171e",
       "hash": "946ff20eb56a77786f11f95b31ea14c9477cdb927a882b34626b2077dbbbdfbd",
       "subpath": "skills/il-fix"
     },
@@ -108,7 +117,7 @@
       "name": "il-verify",
       "description": "Stage 4/4 (final) of the il-loop workflow. Use only when the user explicitly asks to verify and ship a fixed GitHub issue via phrases like \"/il-verify\", \"il-loop:verify\", \"验证 issue NN\", or \"推送 issue NN\". Refreshes the GitHub issue from gh, diffs the worktree against start_commit, runs the user-declared test command, and walks three independent confirmation gates (push branch / create PR / close issue) before marking status=done. Highest commit-and-share side-effect risk in il-loop — NEVER invoke automatically.",
       "gitUrl": "https://github.com/philip1974/dev-loop-skills",
-      "sha": "17ceabdec3e99c3086a4fa7d1f9c03181dda9c18",
+      "sha": "3876a309b06fceef5482c4dc32b681956705171e",
       "hash": "3e2aad595605f887f1fab2a7710a72ed1865e4b1962d88ce7014845a632564c0",
       "subpath": "skills/il-verify"
     },
@@ -117,8 +126,8 @@
       "name": "dl-req-mvp",
       "description": "Stage 1/6 of the dev-loop workflow (MVP + visual/product anchors profile). Use only when the user explicitly asks to start the heavy req variant via phrases like \"/dl-req-mvp\", \"dev-loop:req:mvp\", \"进入 mvp req 阶段\". Same stage slot as /dl-req but locks down product-level anchors early — MVP scope, design system visual tone (NOT components or APIs), user-confirmed open-source references, user-confirmed product benchmarks, user-confirmed design system references. Does NOT touch data types, interfaces, or detailed entities — those stay in /dl-plan (议题 G boundary). Produces req.md with req_contract_version=1, req_profile=mvp, plus profile-specific sections. Supports resume mode for profile_status=partial topics. Do NOT invoke for ordinary /dl-req requests, simple feature ideas, wiki ingestion, or any request that does not reference an external product surface to lock.",
       "gitUrl": "https://github.com/philip1974/continuo-skills-catalog",
-      "sha": "b256d3119f7bbe2c85dc67ec2c922d3a507b0d3e",
-      "hash": "a4fa2a25724d7ca68cc3c088126376c6d5812274c5783f3bc883a81549fe8a1b",
+      "sha": "3f671b5d49a3b859d6f2d3389b8981d3b9a0af6f",
+      "hash": "3bca52c392681dd72962ebe91fedcce34ab367d54a4a640bff1ffaa8ba1c4628",
       "subpath": "skills/dl-req-mvp"
     }
   ]
